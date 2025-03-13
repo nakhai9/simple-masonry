@@ -1,0 +1,23 @@
+<div class="flex flex-col gap-2 px-6 py-2 authentication-section">
+  <div>
+    <h2 class="mb-1 font-semibold text-2xl">Authentication</h2>
+    <p>Secure your account with two-step verification</p>
+  </div>
+  <form [formGroup]="formGroup" class="flex flex-col gap-4">
+    <div class="flex flex-col flex-wrap gap-1 w-1/2">
+      <label for="username" class="font-semibold text-sm">Password</label>
+      <p-password
+        formControlName="password"
+        [feedback]="false"
+        [disabled]="true"
+        fluid
+      ></p-password>
+    </div>
+    <div class="flex flex-col flex-wrap gap-1 w-1/2">
+      <label for="username" class="font-semibold text-sm"
+        >Two-factor authentication</label
+      >
+      <p-toggleswitch formControlName="is2Factor" />
+    </div>
+  </form>
+</div>

@@ -1,0 +1,23 @@
+<ng-container *ngIf="vm$ | async as vm">
+  <div class="p-10">
+    @if(vm.isLoading) {
+    <div class="flex justify-center p-4">
+      <p-progress-spinner ariaLabel="loading" />
+    </div>
+    } @if (!vm.isLoading && !vm.list.length) {
+    <div class="flex justify-center p-4 text-lg italic">No data</div>
+    }
+
+    <div class="gap-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
+      @for (image of vm.list; track $index) {
+      <div>
+        <img
+          [src]="image.urls.raw"
+          class="rounded-lg max-w-full h-auto"
+          alt=""
+        />
+      </div>
+      }
+    </div>
+  </div>
+</ng-container>

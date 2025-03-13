@@ -1,0 +1,38 @@
+<ng-container *ngIf="vm$ | async as vm">
+  <div
+    class="relative flex sm:flex-row md:flex-row lg:flex-row flex-col flex-1"
+  >
+    <div class="p-4 w-full sm:w-3/10 md:w-1/5">
+      <app-tab-stepper
+        [stepList]="vm.stepper"
+        [currentStep]="vm.currentStep"
+        (onChange)="stepChanges($event)"
+      ></app-tab-stepper>
+    </div>
+    <div class="relative lg:flex-1 w-full sm:w-7/10 md:w-4/5">
+      <ng-container *ngIf="vm.currentStep.key === 'profile'">
+        <app-public-profile></app-public-profile>
+      </ng-container>
+      <ng-container *ngIf="vm.currentStep.key === 'account'">
+        <app-account></app-account>
+      </ng-container>
+      <ng-container *ngIf="vm.currentStep.key === 'authentication'">
+        <app-authentication></app-authentication>
+      </ng-container>
+      <ng-container *ngIf="vm.currentStep.key === 'appearance'">
+        <app-appearance></app-appearance>
+      </ng-container>
+    </div>
+  </div>
+  <!-- <div
+      class="bottom-0 left-0 z-10 absolute flex justify-center gap-2 py-4 border-slate-200 border-t w-full"
+    >
+      <p-button
+        label="Reset"
+        type="button"
+        severity="secondary"
+        [disabled]="true"
+      ></p-button>
+      <p-button label="Save" onclick="save()" type="button"></p-button>
+    </div> -->
+</ng-container>

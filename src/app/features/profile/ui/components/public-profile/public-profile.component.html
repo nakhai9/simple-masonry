@@ -1,0 +1,31 @@
+<div class="flex flex-col gap-2 px-6 py-2">
+  <div>
+    <h2 class="mb-1 font-semibold text-2xl">Edit profile</h2>
+    <p>
+      Keep your personal details private. Information you add here is visible to
+      anyone who can view your profile.
+    </p>
+  </div>
+  <form [formGroup]="formGroup" class="flex flex-col gap-4">
+    <div class="flex gap-4 w-1/2">
+      <div class="flex flex-col gap-1">
+        <label for="username" class="font-semibold text-sm">First name*</label>
+        <input pInputText type="text" formControlName="firstName" fluid />
+      </div>
+      <div class="flex flex-col gap-1">
+        <label for="username" class="font-semibold text-sm">Last name*</label>
+        <input pInputText type="text" formControlName="lastName" fluid />
+      </div>
+    </div>
+    <div class="flex flex-col gap-1 w-1/2">
+      <label for="username" class="font-semibold text-sm">Bio</label>
+      <textarea
+        fluid
+        rows="5"
+        cols="30"
+        pTextarea
+        formControlName="bio"
+      ></textarea>
+    </div>
+  </form>
+</div>

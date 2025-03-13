@@ -1,0 +1,22 @@
+<div class="inline-flex flex-col gap-2 w-full h-full">
+  @for (step of stepList; track step) {
+  <div
+    (click)="handleClickStep(step)"
+    class="{{
+      step.isHide ? 'hidden' : ''
+    }}  flex w-fit cursor-pointer flex-col justify-center rounded-md"
+  >
+    <p class="hover:bg-slate-200 p-1 rounded-md font-semibold text-base">
+      {{ step.title }}
+    </p>
+    <div
+      class="{{
+        currentStep.key === step.key
+          ? 'border-gray-400  border-b-3 '
+          : 'border-transparent  border-b-3 '
+      }}"
+    ></div>
+  </div>
+
+  }
+</div>

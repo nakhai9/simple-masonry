@@ -1,0 +1,49 @@
+<div
+  class="relative flex flex-row flex-1 lg:mx-auto w-full sm:w-full lg:w-6xl h-screen"
+>
+  <div class="border-slate-300 border-r">
+    <div class="flex flex-col gap-2 p-1">
+      <p-button [disabled]="true" type="button" [rounded]="true" [text]="true"
+        ><i class="pi pi-pinterest" style="color: red; font-size: 1.5rem"></i
+      ></p-button>
+      <p-button
+        (click)="handleClick('home')"
+        type="button"
+        [rounded]="true"
+        [text]="true"
+        ><i class="pi pi-home" style="font-size: 1.5rem"></i
+      ></p-button>
+      <p-button
+        (click)="handleClick('')"
+        type="button"
+        [rounded]="true"
+        [text]="true"
+        ><i class="pi pi-plus-circle" style="font-size: 1.5rem"></i
+      ></p-button>
+      <p-button
+        (click)="handleClick('')"
+        type="button"
+        [rounded]="true"
+        [text]="true"
+        ><i class="pi pi-bell" style="font-size: 1.5rem"></i
+      ></p-button>
+      <p-button
+        (click)="handleClick('')"
+        type="button"
+        [rounded]="true"
+        [text]="true"
+        ><i class="pi pi-inbox" style="font-size: 1.5rem"></i
+      ></p-button>
+      <p-button
+        (click)="handleClick('profile')"
+        type="button"
+        [rounded]="true"
+        [text]="true"
+        ><i class="pi pi-user" style="font-size: 1.5rem"></i
+      ></p-button>
+    </div>
+  </div>
+  <div class="flex-1 overflow-y-auto">
+    <ng-content></ng-content>
+  </div>
+</div>

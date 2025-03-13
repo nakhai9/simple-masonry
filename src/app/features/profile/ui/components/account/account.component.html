@@ -1,0 +1,18 @@
+<div class="flex flex-col gap-2 px-6 py-2">
+  <div>
+    <h2 class="mb-1 font-semibold text-2xl">Account management</h2>
+    <p>Make changes to your personal information or account type.</p>
+  </div>
+  <form [formGroup]="formGroup" class="flex flex-col gap-4">
+    <div class="flex flex-col flex-wrap gap-1 md:w-1/2">
+      <label for="email" class="font-semibold text-sm"
+        >Primary email address</label
+      >
+      <input pInputText type="text" formControlName="email" fluid />
+    </div>
+    <div class="flex flex-col flex-wrap gap-1 md:w-1/2">
+      <label for="phone" class="font-semibold text-sm">Phone number</label>
+      <input pInputText type="text" formControlName="phone" fluid />
+    </div>
+  </form>
+</div>
