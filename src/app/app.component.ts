@@ -4,7 +4,9 @@ import { RouterOutlet } from '@angular/router';
 
 import { DialogModule } from 'primeng/dialog';
 
-import { PinterestLayoutComponent } from './core/layout/pinterest-layout/pinterest-layout.component';
+import {
+  PinterestLayoutComponent,
+} from './core/layout/pinterest-layout/pinterest-layout.component';
 
 @Component({
   selector: 'app-root',
@@ -14,5 +16,5 @@ import { PinterestLayoutComponent } from './core/layout/pinterest-layout/pintere
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'SimpleProjectSettings';
+  title = 'Simple Masonry';
 }

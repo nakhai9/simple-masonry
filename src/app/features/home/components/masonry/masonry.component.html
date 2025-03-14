@@ -1,0 +1,14 @@
+<!-- Masonry Layouts with Tailwind CSS https://cruip-tutorials.vercel.app/masonry/ -->
+<div class="gap-4 columns-2 sm:columns-3 masonry-list">
+  @for (columns of masonryData; track $index) {
+  <div class="flex flex-col gap-4">
+    @for (image of columns; track $index) {
+    <div
+      class="relative hover:opacity-40 shadow-md rounded-lg overflow-hidden break-inside-avoid cursor-pointer"
+    >
+      <img [src]="image.imageUrl" [alt]="image.alt" class="object-fit" />
+    </div>
+    }
+  </div>
+  }
+</div>

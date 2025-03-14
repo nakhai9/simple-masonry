@@ -1,23 +1,20 @@
 <ng-container *ngIf="vm$ | async as vm">
-  <div class="p-10">
-    @if(vm.isLoading) {
-    <div class="flex justify-center p-4">
-      <p-progress-spinner ariaLabel="loading" />
+  <div class="relative">
+    <div class="top-0 left-0 z-10 sticky bg-white p-3">
+      <p-iconfield>
+        <p-inputicon styleClass="pi pi-search" />
+        <input type="text" pInputText placeholder="Search" fluid />
+      </p-iconfield>
     </div>
-    } @if (!vm.isLoading && !vm.list.length) {
-    <div class="flex justify-center p-4 text-lg italic">No data</div>
-    }
-
-    <div class="gap-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
-      @for (image of vm.list; track $index) {
-      <div>
-        <img
-          [src]="image.urls.raw"
-          class="rounded-lg max-w-full h-auto"
-          alt=""
-        />
+    <div class="relative flex flex-col gap-4 px-3">
+      @if(vm.isLoading) {
+      <div class="flex justify-center p-4">
+        <p-progress-spinner ariaLabel="loading" />
       </div>
+      } @if (!vm.isLoading && !vm.list.length) {
+      <div class="flex justify-center p-4 text-lg italic">No data</div>
       }
+      <app-masonry [spacing]="16" [columns]="3" [data]="vm.list"></app-masonry>
     </div>
   </div>
 </ng-container>

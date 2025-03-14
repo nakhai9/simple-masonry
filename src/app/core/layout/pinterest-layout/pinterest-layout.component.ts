@@ -1,12 +1,16 @@
-import { Component, inject } from '@angular/core';
+import {
+  Component,
+  inject,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ButtonModule } from 'primeng/button';
+import { TooltipModule } from 'primeng/tooltip';
 
 @Component({
   selector: 'app-pinterest-layout',
   standalone: true,
-  imports: [ButtonModule],
+  imports: [ButtonModule, TooltipModule],
   templateUrl: './pinterest-layout.component.html',
 })
 export class PinterestLayoutComponent {

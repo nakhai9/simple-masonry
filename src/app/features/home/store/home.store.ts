@@ -1,15 +1,19 @@
-import { inject, Injectable } from '@angular/core';
+import {
+  inject,
+  Injectable,
+} from '@angular/core';
 
 import { finalize } from 'rxjs';
 
 import { ComponentStore } from '@ngrx/component-store';
 import { tapResponse } from '@ngrx/operators';
 
-import { UnunsplashImageModel } from '../model/model';
+import { MasonryData } from '../model/model';
 import { UnsplashService } from '../service/unsplash.service';
 
 export const initialState = {
-  list: [] as UnunsplashImageModel[],
+  list: [] as MasonryData[],
+  masonry: [] as any,
   isLoading: false as boolean,
 };
 
@@ -32,8 +36,14 @@ export class HomeStore extends ComponentStore<State> {
       .pipe(
         tapResponse({
           next: (response) => {
+            console.log(response);
+
+            const list = response.map((x) => ({
+              alt: x.alt_description,
+              imageUrl: x.urls.regular,
+            }));
             this.patchState({
-              list: response,
+              list: list,
             });
           },
           error: (error) => console.log(error),

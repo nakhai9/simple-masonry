@@ -81,3 +81,8 @@ export type UnunsplashImageModel = {
     };
   };
 };
+
+export type MasonryData = {
+  imageUrl: string;
+  alt: string;
+};

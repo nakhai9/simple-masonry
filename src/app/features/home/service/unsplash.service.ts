@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import {
+  inject,
+  Injectable,
+} from '@angular/core';
 
 import { Observable } from 'rxjs';
 
@@ -11,6 +14,7 @@ import { UnunsplashImageModel } from '../model/model';
 })
 export class UnsplashService {
   BASE_URL = 'https://api.unsplash.com/photos';
+  SEARCH_URL = 'https://api.unsplash.com/search/photos';
 
   private _http = inject(HttpClient);
 
@@ -18,7 +22,7 @@ export class UnsplashService {
     return this._http.get<UnunsplashImageModel[]>(this.BASE_URL, {
       params: {
         client_id: environment.unsplashAccessKey || '',
-        perPage: 12,
+        perPage: 10,
         page: 1,
       },
     });
