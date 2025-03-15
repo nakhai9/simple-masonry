@@ -1,9 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  Component,
-  inject,
-  OnInit,
-} from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 
 import { IconField } from 'primeng/iconfield';
 import { InputIcon } from 'primeng/inputicon';
