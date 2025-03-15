@@ -36,8 +36,6 @@ export class HomeStore extends ComponentStore<State> {
       .pipe(
         tapResponse({
           next: (response) => {
-            console.log(response);
-
             const list = response.map((x) => ({
               alt: x.alt_description,
               imageUrl: x.urls.regular,
